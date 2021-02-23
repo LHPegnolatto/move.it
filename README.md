@@ -21,7 +21,7 @@
 * [License](#closed_book-license)
 
 # :triangular_ruler: Layout
-<p align="center">
+<p align="left">
     <a title="Download .fig Web" href="https://www.figma.com/file/ge20pu3ofMOKoliUyKx1Nl/?viewer=1&node-id=160:2761">
         <img alt="Direct Download" src="https://img.shields.io/badge/Download Web-black?style=flat-square&logo=figma&logoColor=red" width="200px" />
     </a>
