@@ -28,7 +28,7 @@
 </p>
 
 # :earth_americas: Demo Website
-[Vercel deploy](https://move-it-ten.vercel.app/)
+[Vercel deploy](https://move-it-lhp.vercel.app/)
 
 # :computer: Technologies
 This project was made using the follow technologies:
