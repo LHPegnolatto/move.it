@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 
 import styles from '../styles/components/Countdown.module.css';
 
@@ -12,6 +13,11 @@ const Countdown: React.FC = () => {
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
+  function stopCountdown() {
+    setActive(false);
+    setTime(25 * 60);
+  }
+
   function startCountdown() {
     setActive(true);
   }
@@ -21,11 +27,23 @@ const Countdown: React.FC = () => {
       setTimeout(() => {
         setTime(time - 1);
       }, 1000);
+    } else {
+      setActive(false);
+      setTime(25 * 60);
     }
   }, [active, time]);
 
   return (
     <div>
+      {active && time > 0 && (
+        <Head>
+          <title>
+            {`${minuteLeft}${minuteRight}:${secondLeft}${secondRight}`} |
+            move.it
+          </title>
+        </Head>
+      )}
+
       <div className={styles.countdownContainer}>
         <div>
           <span>{minuteLeft}</span>
@@ -41,9 +59,9 @@ const Countdown: React.FC = () => {
       <button
         type="button"
         className={styles.countdownButton}
-        onClick={startCountdown}
+        onClick={active ? stopCountdown : startCountdown}
       >
-        Iniciar um ciclo
+        {active ? 'Cancelar o ciclo' : 'Iniciar um ciclo'}
       </button>
     </div>
   );
