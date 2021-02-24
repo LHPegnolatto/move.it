@@ -1,9 +1,15 @@
 import { AppProps } from 'next/app';
 
+import { ChallengesContextProvider } from '../contexts/ChallengesContext';
+
 import '../styles/global.css';
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <ChallengesContextProvider>
+      <Component {...pageProps} />
+    </ChallengesContextProvider>
+  );
 };
 
 export default MyApp;

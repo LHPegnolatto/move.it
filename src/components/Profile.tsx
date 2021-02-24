@@ -1,6 +1,8 @@
 import styles from '../styles/components/Profile.module.css';
 
-const Profile: React.FC = () => {
+interface ProfileProps {}
+
+const Profile = ({}: ProfileProps) => {
   return (
     <div className={styles.profileContainer}>
       <img
