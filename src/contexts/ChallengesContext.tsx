@@ -49,7 +49,8 @@ export const ChallengesContextProvider = ({
     new Audio('/notification.mp3').play();
 
     if (Notification.permission === 'granted') {
-      new Notification('Novo desafio 🎉', {
+      new Notification('Novo desafio! 💜🚀', {
+        icon: `favicon.png`,
         body: `Valendo ${challenge.amount}xp`,
       });
     }
